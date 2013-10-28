@@ -33,10 +33,10 @@ Desweiteren wird davon ausgegangen, dass sich dieses Shell Script im Ordner ober
 Das Script muss in jede RP Instanz kopiert werden, da bei domainFACTORY kein zentraler Zugriff auf alle TYPO3 Instanzen möglich ist.
 
 Um das Script nutzen zu können muss es ausführbar gemacht werden:
-    chmod +x t3update.sh
+    `chmod +x t3update.sh`
 
 Aufruf des Scripts:
-    ./t3update.sh
+    `./t3update.sh`
 
 Im Script gibt es ein paar Yes/No Entscheidungen. Der jeweilige Default Wert ist durch einen Grossbuchstaben sichtbar, z.B. Y/n
 In diesem Fall entspricht ein Enter dem Y und man kann sich die Eingabe sparen.
