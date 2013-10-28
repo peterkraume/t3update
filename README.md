@@ -5,6 +5,8 @@ Dieses Script ist für ein semi-automatisches Update von TYPO3 Installationen be
 
 Funktionen aus dem Install Tool, z.B. das setzen von [SYS][compat_version] oder ein compare im Database Analyzer werden durch das Script NICHT übernommen!
 
+**Achtung: Aktuell unterstützt das Skript nur TYPO3 4.5 LTS. Eine Anpassung an aktuelle TYPO3 Versionen ist aber geplant!**
+
 Was macht das Script genau?
 - Runterladen des gewünschten Source von typo3.org
 - entpacken des Source

@@ -28,108 +28,13 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 #
-#--[ README ]----------------------------------------------------------------------
+#--[ README & CHANGELOG ]----------------------------------------------------------
 #
-# Updates werden hier veroeffentlicht:
-# http://forum.df.eu/forum/showthread.php?t=51430
+# Readme:
+# https://github.com/peterkraume/t3update/blob/master/README.md
 #
-# Dieses Script ist fuer ein semi-automatisches Update von TYPO3
-# Installationen bei domainfactory, insbesondere dem Reseller Tool RP
-# gedacht. Hauptanwendungsbereich ist die Installation von Bugfix
-# Releases von TYPO3.
-#
-# Funktionen aus dem Install Tool, z.B. das setzen von
-# [SYS][compat_version] oder ein compare im Database Analyzer werden
-# durch das Script NICHT uebernommen!
-#
-# Was macht das Script genau?
-# - Runterladen des gewuenschten Source von typo3.org
-# - entpacken des Source
-# - Source Tarball wieder loeschen
-# - .htaccess Dateien fuer mod_expires durch umbennnen aktivieren
-# - alten Symlink im Dummy Verzeichnis loeschen
-# - neuen Symlink anlegen
-# - index.php aus Source Verzeichnis in Dummy Verzeichnis kopieren
-# - neuen Encryption Key generieren
-# - Cache Tabellen in der Datenbank leeren
-# - temp_CACHED_* Dateien aus /typo3conf loeschen
-#
-# Die Nutzung dieses Scripts erfolgt auf eigene Gefahr! Vor jedem
-# Update sind Backups anzufertigen!
-#
-# Teile dieses Scripts wurden dem TYPO3 mass upgrade script von Michiel
-# Roos entnommen oder dadurch inspiriert:
-# http://www.typofree.org/article/archive/2009/january/title/typo3-mass-upgrade-script/
-#
-#--[ Installation / Nutzung ]------------------------------------------------------
-#
-# Voraussetzung ist eine Symlink Installation von TYPO3 und ein SSH
-# Zugang. Per Default wird davon ausgegangen, dass der TYPO3 Source in
-# der Regel immer in einem Unterverzeichnis des in der Variablen
-# SRC_DIR bezeichneten Verzeichnisses gespeichert ist.
-# Desweiteren wird davon ausgegangen, dass sich dieses Shell Script im
-# Ordner unterhalb des Document Roots befindet. Das Dummy Verzeichnis
-# laesst sich ueber die Variable DUMMY_DIR anpassen.
-# Ueber die Variablen laesst sich das Script leicht an eigene Beduerfnisse
-# anpassen.
-#
-# Das Script muss in jede RP Instanz kopiert werden, da bei df kein
-# zentraler Zugriff auf alle TYPO3 Instanzen moeglich ist.
-#
-# Um das Script nutzen zu koennen muss es ausfuehrbar gemacht werden:
-#	chmod +x t3update.sh
-#
-# Aufruf des Scripts:
-#	./t3update.sh
-#
-# Im Script gibt es ein paar Yes/No Entscheidungen. Der jeweilige Default
-# Wert ist durch einen Grossbuchstaben sichtbar, z.B. Y/n
-# In diesem Fall entspricht ein Enter dem Y und man kann sich die Eingabe
-# sparen
-#
-#--[ CHANGELOG ]-------------------------------------------------------------------
-#
-# 31.01.2011
-#   * Release von Version 0.4.3
-#   * Bugfix: wget Befehl modifiziert um ?download Parameter zu entfernen
-#   * Change: Modifikation der Datei typo3/cli_dispatch.phpsh entfernt
-#             Skript stattdessen wie folgt aufrufen:
-#             `/bin/env -i /usr/local/bin/php5 -f /pfad/zu/typo3/cli_dispatch.phpsh scheduler`
-#
-# 19.08.2010
-#   * Release von Version 0.4.2
-#   * Bugfix: .htaccess Pr�fung �berarbeitet
-#   * Bugfix: Umlaute ersetzt wegen fehlerhafter Darstellung unter Mac OS X
-#
-# 19.04.2010
-#   * Release von Version 0.4.1
-#   * Bugfix: Falsches Source Verzeichnis, wenn SRC_DIR neu gesetzt wurde
-#     (Danke an Stefan Busemann)
-#   * Kleine Verbesserungen, wenn Pfade neu gesetzt werden
-#
-# 09.04.2010
-#   * Release von Version 0.4
-#   * Pruefung, ob die .htaccess Dateien fuer mod_expires bereits aktiviert
-#     sind (das ist seit TYPO3 4.3 standardmaessig der Fall)
-#   * Generierung eines neuen Encryption Keys, da viele Installationen
-#     immer noch einen schwachen Key verwenden
-#   * Cache Tabellen in der Datenbank leeren
-#   * Pfad zu PHP in cli_dispatch.phpsh aendern
-#   * Code Cleanup und mehr Kommentare
-#
-# 09.02.2009
-#   * Release von Version 0.3
-#   * Pruefung, ob Source Download erfolgreich war
-#   * index.php aus Source Verzeichnis in Dummy Verzeichnis kopieren
-#
-# 21.01.2009
-#   * Release von Version 0.2 (erste oeffentliche Version)
-#   * Finetuning
-#   * temp_CACHED_ Dateien aus typo3conf loeschen
-#   * weitere erklaerende Texte im Script Header
-#
-# 21.01.2009
-#   * Release von Version 0.1
+# Changelog:
+# https://github.com/peterkraume/t3update/blob/master/CHANGELOG.md
 #
 #----------------------------------------------------------------------------------
 
